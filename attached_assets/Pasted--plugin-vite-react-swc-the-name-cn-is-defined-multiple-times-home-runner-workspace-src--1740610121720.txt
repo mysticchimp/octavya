@@ -1,0 +1,125 @@
+[plugin:vite:react-swc] × the name `cn` is defined multiple times
+    ╭─[/home/runner/workspace/src/components/ui/progress.tsx:4:1]
+  1 │ import * as React from "react"
+  2 │ import * as ProgressPrimitive from "@radix-ui/react-progress"
+  3 │ 
+  4 │ import { cn } from "@/lib/utils"
+    ·          ─┬
+    ·           ╰── previous definition of `cn` here
+  5 │ 
+  6 │ const Progress = React.forwardRef<
+  7 │   React.ElementRef<typeof ProgressPrimitive.Root>,
+  8 │   React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>
+  9 │ >(({ className, value, ...props }, ref) => (
+ 10 │   <ProgressPrimitive.Root
+ 11 │     ref={ref}
+ 12 │     className={cn(
+ 13 │       "relative h-4 w-full overflow-hidden rounded-full bg-secondary",
+ 14 │       className
+ 15 │     )}
+ 16 │     {...props}
+ 17 │   >
+ 18 │     <ProgressPrimitive.Indicator
+ 19 │       className="h-full w-full flex-1 bg-primary transition-all"
+ 20 │       style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+ 21 │     />
+ 22 │   </ProgressPrimitive.Root>
+ 23 │ ))
+ 24 │ Progress.displayName = ProgressPrimitive.Root.displayName
+ 25 │ 
+ 26 │ export { Progress }
+ 27 │ "use client"
+ 28 │ 
+ 29 │ import * as React from "react"
+ 30 │ import * as ProgressPrimitive from "@radix-ui/react-progress"
+ 31 │ 
+ 32 │ import { cn } from "@/lib/utils"
+    ·          ─┬
+    ·           ╰── `cn` redefined here
+ 33 │ 
+ 34 │ const Progress = React.forwardRef<
+ 35 │   React.ElementRef<typeof ProgressPrimitive.Root>,
+    ╰────
+  × the name `Progress` is defined multiple times
+    ╭─[/home/runner/workspace/src/components/ui/progress.tsx:6:1]
+  3 │ 
+  4 │ import { cn } from "@/lib/utils"
+  5 │ 
+  6 │ const Progress = React.forwardRef<
+    ·       ────┬───
+    ·           ╰── previous definition of `Progress` here
+  7 │   React.ElementRef<typeof ProgressPrimitive.Root>,
+  8 │   React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>
+  9 │ >(({ className, value, ...props }, ref) => (
+ 10 │   <ProgressPrimitive.Root
+ 11 │     ref={ref}
+ 12 │     className={cn(
+ 13 │       "relative h-4 w-full overflow-hidden rounded-full bg-secondary",
+ 14 │       className
+ 15 │     )}
+ 16 │     {...props}
+ 17 │   >
+ 18 │     <ProgressPrimitive.Indicator
+ 19 │       className="h-full w-full flex-1 bg-primary transition-all"
+ 20 │       style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+ 21 │     />
+ 22 │   </ProgressPrimitive.Root>
+ 23 │ ))
+ 24 │ Progress.displayName = ProgressPrimitive.Root.displayName
+ 25 │ 
+ 26 │ export { Progress }
+ 27 │ "use client"
+ 28 │ 
+ 29 │ import * as React from "react"
+ 30 │ import * as ProgressPrimitive from "@radix-ui/react-progress"
+ 31 │ 
+ 32 │ import { cn } from "@/lib/utils"
+ 33 │ 
+ 34 │ const Progress = React.forwardRef<
+    ·       ────┬───
+    ·           ╰── `Progress` redefined here
+ 35 │   React.ElementRef<typeof ProgressPrimitive.Root>,
+ 36 │   React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>
+ 37 │ >(({ className, value, ...props }, ref) => (
+    ╰────
+  × the name `Progress` is exported multiple times
+    ╭─[/home/runner/workspace/src/components/ui/progress.tsx:26:1]
+ 23 │ ))
+ 24 │ Progress.displayName = ProgressPrimitive.Root.displayName
+ 25 │ 
+ 26 │ export { Progress }
+    ·          ────┬───
+    ·              ╰── previous exported here
+ 27 │ "use client"
+ 28 │ 
+ 29 │ import * as React from "react"
+ 30 │ import * as ProgressPrimitive from "@radix-ui/react-progress"
+ 31 │ 
+ 32 │ import { cn } from "@/lib/utils"
+ 33 │ 
+ 34 │ const Progress = React.forwardRef<
+ 35 │   React.ElementRef<typeof ProgressPrimitive.Root>,
+ 36 │   React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>
+ 37 │ >(({ className, value, ...props }, ref) => (
+ 38 │   <ProgressPrimitive.Root
+ 39 │     ref={ref}
+ 40 │     className={cn(
+ 41 │       "relative h-4 w-full overflow-hidden rounded-full bg-secondary",
+ 42 │       className
+ 43 │     )}
+ 44 │     {...props}
+ 45 │   >
+ 46 │     <ProgressPrimitive.Indicator
+ 47 │       className="h-full w-full flex-1 bg-primary transition-all"
+ 48 │       style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+ 49 │     />
+ 50 │   </ProgressPrimitive.Root>
+ 51 │ ))
+ 52 │ Progress.displayName = ProgressPrimitive.Root.displayName
+ 53 │ 
+ 54 │ export { Progress }
+    ·          ────┬───
+    ·              ╰── exported more than once
+    ╰────
+
+Advice:   ☞ Exported identifiers must be unique
